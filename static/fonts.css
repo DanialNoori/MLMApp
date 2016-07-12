@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Yekan';
+    src: url('byekan/Yekan.eot'); /* IE9 Compat Modes */
+    src: url('byekan/Yekan.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('byekan/Yekan.woff') format('woff'), /* Pretty Modern Browsers */ url('byekan/Yekan.ttf') format('truetype'), /* Safari, Android, iOS */ url('byekan/Yekan.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+    
+*:not(i) {
+    font-family: "Yekan" !important;
+}
+
+html, body {
+    direction: rtl;
+    text-align: right;
+}

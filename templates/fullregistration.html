@@ -1,0 +1,139 @@
+{%   load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <link rel="stylesheet" href="{% static 'fonts.css' %}"/>
+    <link rel="stylesheet" href="{% static 'semantic.rtl.min.css' %}"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="ui raised very padded text container segment" style="margin-top:30px">
+  <h2 class="ui header">
+تکمیل ثبت نام
+  </h2>
+
+<div class="ui piled segment">
+  <h4 class="ui header">
+</h4>
+<form class="ui form" action="/accounts/register/complete/" method="post" enctype="multipart/form-data">
+  <div class="field">
+    <label>نام و نام خانوادگی</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="name" placeholder="">
+      </div>
+      <div class="field">
+        <input type="text" name="familyName" placeholder="">
+      </div>
+    </div>
+  </div>
+  <div class="two fields">
+    <div class="field">
+      <label>استان</label>
+      <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="state" placeholder="">
+      </div>
+    </div>
+      </div>
+    <div class="field">
+      <label>شهر</label>
+      <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="city" placeholder="">
+      </div>
+    </div>
+      </div>
+      </div>  
+       <div class="two fields">
+      <div class="field">
+      <label>نام پدر</label>
+        <input type="text" name="fatherName" placeholder="">
+      </div>
+      <div class="field">
+      <label>شماره شناسنامه</label>
+        <input type="text" name="birthID" placeholder="">
+      </div>
+      </div>
+
+<div class="field">
+    <label>آدرس</label>
+    <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="address" placeholder="">
+      </div>
+    </div>
+  </div>
+  <div class="fields">
+    <div class="seven wide field">
+      <label>کد ملی</label>
+      <input type="text" name="nationalID" maxlength="16" placeholder="">
+    </div>
+    <div class="three wide field">
+      <label>روز تولد</label>
+      <input type="text" name="birthDay" maxlength="3" placeholder="01">
+    </div>
+    <div class="six wide field">
+      <label>ماه تولد</label>
+      <div class="two fields">
+        <div class="field">
+          <select class="ui fluid search dropdown" name="birthMonth">
+            <option value="">ماه</option>
+            <option value="1">فروردین</option>
+            <option value="2">اردیبهشت</option>
+            <option value="3">خرداد</option>
+            <option value="4">تیر</option>
+            <option value="5">مرداد</option>
+            <option value="6">شهریور</option>
+            <option value="7">مهر</option>
+            <option value="8">آبان</option>
+            <option value="9">آذر</option>
+            <option value="10">دی</option>
+            <option value="11">بهمن</option>
+            <option value="12">اسفند</option>
+          </select>
+        </div>
+        <div class="field">
+          <input type="text" name="birthYear" maxlength="4" placeholder="1368">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="field">
+
+    <div class="two fields">
+      <div class="field">
+          <label>شماره تلفن</label>
+        <input type="text" name="phoneNumber" placeholder="">
+      </div>
+    <div class="two fields">
+    <div class="field">
+      <label>کد پستی</label>
+      <div class="fields">
+      <div class="twelve wide field">
+        <input type="text" name="postalCode" placeholder="">
+      </div>
+    </div>
+    </div>
+    </div></div>
+<div class="field">
+      <label>آواتار</label>
+      <div class="fields">
+      <div class="twelve wide field">
+        <input type="file" name="profilePicture">
+      </div>
+    </div>
+    </div>
+    <div class="field">
+    <label>ایمیل</label>
+    <input type="email" placeholder="joe@schmoe.com" name="email">
+  </div>
+  <button class="ui primary button" type="submit" style="margin-top:10px">ثبت اطلاعات</button>
+</form>
+
+
+</div>
+
+</div>
+</body>
+</html>

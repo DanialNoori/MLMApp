@@ -1,0 +1,32 @@
+{%   load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <link rel="stylesheet" href="{% static 'fonts.css' %}"/>
+    <link rel="stylesheet" href="{% static 'semantic.rtl.min.css' %}"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="ui raised very padded text container segment" style="margin-top:30px">
+  <h2 class="ui header">
+  صفحه ی ثبت نام</h2>
+
+<div class="ui piled segment">
+  <h4 class="ui header">
+</h4>
+<form class="ui large form" action="/accounts/register/" method="post">
+  <div class="two fields">
+    <div class="field">
+      <label>شماره موبایل شما:</label>
+      <input placeholder="09121112233" type="text" name="username">
+    </div>
+    </div>
+    <button class="ui primary button" style ='margin-top: 10px' type="submit">فرستادن کد</button>
+  </form>
+
+
+</div>
+
+</div>
+</body>
+</html>

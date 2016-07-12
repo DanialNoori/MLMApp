@@ -1,0 +1,44 @@
+{%   load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <link rel="stylesheet" href="{% static 'fonts.css' %}"/>
+    <link rel="stylesheet" href="{% static 'semantic.rtl.min.css' %}"/>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="ui raised very padded text container segment" style="margin-top:30px">
+  <h2 class="ui header">
+شماره تلفن آپلاین:
+  </h2>
+
+<div class="ui piled segment">
+  <h4 class="ui header">
+</h4>
+{%if error %}
+<div class="ui error message">
+    <div class="header"></div>
+    <p>{{ error }}</p>
+  </div>
+  {%endif%}
+  {%if success%}
+  <div class="ui success message">
+    <p>{{ success }}</p>
+  </div>
+  {%endif%}
+<form class="ui large form" action="/accounts/register/upline/" method="post">
+  <div class="two fields">
+    <div class="field">
+      <label></label>
+      <input placeholder="" type="text" name="parentUsername">
+    </div>
+    </div>
+    <button class="ui primary button" style ='margin-top: 10px' type="submit">تایید کد</button>
+  </form>
+
+
+</div>
+
+</div>
+</body>
+</html>

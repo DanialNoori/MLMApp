@@ -1,0 +1,49 @@
+{%   load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+  <link rel="stylesheet" href="{% static 'fonts.css' %}"/>
+  <link rel="stylesheet" href="{% static 'semantic.rtl.min.css' %}"/>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="ui raised very padded text container segment" style="margin-top:30px">
+    <h2 class="ui header">
+      صفحه اصلی
+    </h2>
+
+    <div class="ui piled segment">
+
+      <div class="ui secondary pointing menu">
+        <a class="item" href="/accounts/main/info">
+          داشبورد
+        </a>
+        <a class="item" href="/accounts/main/profile">
+          پروفایل
+        </a>
+        <a class="active item">
+          اعلان ها
+        </a>
+        <div class="right menu">
+          <a class="ui item">
+            خروج
+          </a>
+        </div>
+      </div>
+      <div class="ui segment">
+        <p>
+          {% for parenthood in parenthood %}
+          {% if parenthood.validatedByParent == 'pending' %}
+          {{ parenthood.child.name }} {{parenthood.child.familyName}} درخواست عضویت دارد
+          <a href="/accounts/parentvalidation?status=accepted&cu={{parenthood.child.user.username}}">تایید درخواست</a>/
+          <a href="/accounts/parentvalidation?status=denied&cu={{parenthood.child.user.username}}">رد درخواست</a>
+          {%endif%}
+          {%endfor%}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

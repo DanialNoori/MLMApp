@@ -1,0 +1,65 @@
+{%   load staticfiles %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+  <link rel="stylesheet" href="{% static 'fonts.css' %}"/>
+  <link rel="stylesheet" href="{% static 'semantic.rtl.min.css' %}"/>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="ui raised very padded text container segment" style="margin-top:30px">
+    <h2 class="ui header">
+      صفحه اصلی
+    </h2>
+
+    <div class="ui piled segment">
+
+      <div class="ui secondary pointing menu">
+        <a class="active item" href="/accounts/main/info">
+          داشبورد
+        </a>
+        <a class="item" href="/accounts/main/profile">
+          پروفایل
+        </a>
+        <a class="item" href="/accounts/main/notifs">
+          اعلان ها
+        </a>
+        <div class="right menu">
+          <a class="ui item">
+            خروج
+          </a>
+        </div>
+      </div>
+      <div class="ui segment">
+        <p>شماره موبایل شما تایید 
+          {% if appUser.validated %}
+          شده است
+          {% else %}
+          نشده است
+          {%endif%}
+        </p>
+        <p>
+          <p>ایمیل شما تایید 
+            {% if appUser.emailValidated %}
+            شده است
+            {% else %}
+            نشده است
+            {%endif%}
+          </p>
+          <p>
+            {% if parenthood.validatedByParent == 'accepted' %}
+            آپلاین شما، شما را تایید کرده است.
+            {% elif parenthood.validatedByParent == 'denied' %}
+            آپلاین شما، شما را رد کرده است.
+            {% else %}
+            آپلاین شما هنوز درخواست شما را بررسی نکرده است.
+            {%endif%}  
+
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+  </html>
